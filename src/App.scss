@@ -1,0 +1,233 @@
+$violet: #5964e0;
+$light-violet: #939bf4;
+$dark-blue: #19202d;
+$midnight: #121721;
+$white: #ffff;
+$light-grey: #f4f6f8;
+$gray: #9daec2;
+$dark-grey: #6e8098;
+
+@font-face {
+  font-family: Kumbh Sans, sans-serif;
+  src: url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap"),
+    format("truetype");
+}
+
+@mixin theme(
+  $theme-name,
+  $header-bg,
+  $header-text,
+  $main-bg,
+  $secondary-bg,
+  $text,
+  $muted-text,
+  $hover
+) {
+  .#{$theme-name} {
+    .my-modal modal {
+      background-color: $secondary-bg;
+    }
+    min-height: 100vh;
+    background-color: $main-bg;
+    font-family: Kumbh Sans;
+    .header {
+      background-color: $header-bg;
+
+      height: 160px;
+      border-bottom-left-radius: 100px;
+      .header-items {
+        // padding-inline: 150px;
+        h1 {
+          font-family: "Kumbh Sans";
+          font-style: normal;
+          font-weight: 700;
+          font-size: 28px;
+          line-height: 35px;
+          color: #ffff;
+        }
+      }
+    }
+
+    .search-bar {
+      margin-top: -30px;
+      color: $text;
+      .input-group {
+        .location-filter {
+          border-bottom: 1px solid $muted-text;
+        }
+        .filter-icon {
+          cursor: pointer;
+          color: $muted-text;
+        }
+        ::placeholder {
+          color: $muted-text;
+        }
+        background-color: $secondary-bg;
+        color: $text;
+      }
+      .input-group-text {
+        background-color: $secondary-bg;
+        height: 100%;
+        border: 0;
+        .form-check-input {
+          background-color: $muted-text;
+        }
+        .custom-button {
+          color: $header-text;
+          background-color: $header-bg;
+          &:hover {
+            background-color: $hover;
+          }
+        }
+      }
+
+      .custom-button {
+        color: $header-text;
+        background-color: $header-bg;
+        &:hover {
+          background-color: $hover;
+        }
+      }
+    }
+
+    .job-card-wrapper {
+      cursor: pointer;
+      background-color: $secondary-bg;
+      position: relative;
+      .image {
+        position: absolute;
+        top: -25px;
+        left: 32px;
+      }
+      .muted-text {
+        color: $muted-text;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 20px;
+      }
+
+      .text {
+        color: $text;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 25px;
+      }
+      .location-text {
+        color: $violet;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 14px;
+        line-height: 17px;
+      }
+    }
+
+    .job-details {
+      .text {
+        color: $text;
+      }
+      .muted-text {
+        font-style: normal;
+
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 20px;
+        color: $muted-text;
+      }
+      .location-text {
+        font-style: normal;
+        font-weight: 700;
+        font-size: 14px;
+        line-height: 17px;
+        color: $header-bg;
+      }
+      .job-title {
+        font-style: normal;
+        font-weight: 700;
+        font-size: 28px;
+        line-height: 35px;
+      }
+      .heading-text {
+        font-style: normal;
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 25px;
+        color: $text;
+      }
+      .apply-button {
+        font-style: normal;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 20px;
+        text-align: center;
+        width: fit-content;
+        background-color: $header-bg;
+      }
+      .body-text {
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 26px;
+        color: $muted-text;
+      }
+      .extra-padding {
+        padding-inline: 20px;
+      }
+      .job-bar {
+        margin-top: -30px;
+        color: $text;
+
+        .job-bar-row {
+          background-color: $secondary-bg;
+          .floating-img {
+            position: absolute;
+            top: -20px;
+            left: calc(50% - 25px);
+            height: 50px;
+            width: 50px;
+          }
+          .company-button.btn {
+            background-color: $muted-text;
+            color: $header-text;
+            font-style: normal;
+            font-weight: 700;
+            font-size: 16px;
+            line-height: 20px;
+            text-align: center;
+          }
+        }
+      }
+      .job-main-section {
+        .title {
+          width: 300px;
+        }
+        background-color: $secondary-bg;
+      }
+      .job-footer {
+        background-color: $secondary-bg;
+      }
+    }
+  }
+}
+
+@include theme(
+  theme-dark,
+  $violet,
+  $white,
+  $midnight,
+  $dark-blue,
+  $white,
+  $dark-grey,
+  $light-violet
+);
+@include theme(
+  theme-light,
+  $violet,
+  $white,
+  $light-grey,
+  $white,
+  $midnight,
+  $dark-grey,
+  $light-violet
+);

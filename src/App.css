@@ -1,38 +1,359 @@
-.App {
-  text-align: center;
+@font-face {
+  font-family: Kumbh Sans, sans-serif;
+  src: url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap"), format("truetype");
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+.theme-dark {
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  background-color: #121721;
+  font-family: Kumbh Sans;
+}
+.theme-dark .my-modal modal {
+  background-color: #19202d;
+}
+.theme-dark .header {
+  background-color: #5964e0;
+  height: 160px;
+  border-bottom-left-radius: 100px;
+}
+.theme-dark .header .header-items h1 {
+  font-family: "Kumbh Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 35px;
   color: white;
 }
-
-.App-link {
-  color: #61dafb;
+.theme-dark .search-bar {
+  margin-top: -30px;
+  color: white;
+}
+.theme-dark .search-bar .input-group {
+  background-color: #19202d;
+  color: white;
+}
+.theme-dark .search-bar .input-group .location-filter {
+  border-bottom: 1px solid #6e8098;
+}
+.theme-dark .search-bar .input-group .filter-icon {
+  cursor: pointer;
+  color: #6e8098;
+}
+.theme-dark .search-bar .input-group ::-moz-placeholder {
+  color: #6e8098;
+}
+.theme-dark .search-bar .input-group ::placeholder {
+  color: #6e8098;
+}
+.theme-dark .search-bar .input-group-text {
+  background-color: #19202d;
+  height: 100%;
+  border: 0;
+}
+.theme-dark .search-bar .input-group-text .form-check-input {
+  background-color: #6e8098;
+}
+.theme-dark .search-bar .input-group-text .custom-button {
+  color: white;
+  background-color: #5964e0;
+}
+.theme-dark .search-bar .input-group-text .custom-button:hover {
+  background-color: #939bf4;
+}
+.theme-dark .search-bar .custom-button {
+  color: white;
+  background-color: #5964e0;
+}
+.theme-dark .search-bar .custom-button:hover {
+  background-color: #939bf4;
+}
+.theme-dark .job-card-wrapper {
+  cursor: pointer;
+  background-color: #19202d;
+  position: relative;
+}
+.theme-dark .job-card-wrapper .image {
+  position: absolute;
+  top: -25px;
+  left: 32px;
+}
+.theme-dark .job-card-wrapper .muted-text {
+  color: #6e8098;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+}
+.theme-dark .job-card-wrapper .text {
+  color: white;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 25px;
+}
+.theme-dark .job-card-wrapper .location-text {
+  color: #5964e0;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 17px;
+}
+.theme-dark .job-details .text {
+  color: white;
+}
+.theme-dark .job-details .muted-text {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  color: #6e8098;
+}
+.theme-dark .job-details .location-text {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 17px;
+  color: #5964e0;
+}
+.theme-dark .job-details .job-title {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 35px;
+}
+.theme-dark .job-details .heading-text {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 25px;
+  color: white;
+}
+.theme-dark .job-details .apply-button {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20px;
+  text-align: center;
+  width: -moz-fit-content;
+  width: fit-content;
+  background-color: #5964e0;
+}
+.theme-dark .job-details .body-text {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 26px;
+  color: #6e8098;
+}
+.theme-dark .job-details .extra-padding {
+  padding-inline: 20px;
+}
+.theme-dark .job-details .job-bar {
+  margin-top: -30px;
+  color: white;
+}
+.theme-dark .job-details .job-bar .job-bar-row {
+  background-color: #19202d;
+}
+.theme-dark .job-details .job-bar .job-bar-row .floating-img {
+  position: absolute;
+  top: -20px;
+  left: calc(50% - 25px);
+  height: 50px;
+  width: 50px;
+}
+.theme-dark .job-details .job-bar .job-bar-row .company-button.btn {
+  background-color: #6e8098;
+  color: white;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20px;
+  text-align: center;
+}
+.theme-dark .job-details .job-main-section {
+  background-color: #19202d;
+}
+.theme-dark .job-details .job-main-section .title {
+  width: 300px;
+}
+.theme-dark .job-details .job-footer {
+  background-color: #19202d;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.theme-light {
+  min-height: 100vh;
+  background-color: #f4f6f8;
+  font-family: Kumbh Sans;
 }
+.theme-light .my-modal modal {
+  background-color: white;
+}
+.theme-light .header {
+  background-color: #5964e0;
+  height: 160px;
+  border-bottom-left-radius: 100px;
+}
+.theme-light .header .header-items h1 {
+  font-family: "Kumbh Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 35px;
+  color: white;
+}
+.theme-light .search-bar {
+  margin-top: -30px;
+  color: #121721;
+}
+.theme-light .search-bar .input-group {
+  background-color: white;
+  color: #121721;
+}
+.theme-light .search-bar .input-group .location-filter {
+  border-bottom: 1px solid #6e8098;
+}
+.theme-light .search-bar .input-group .filter-icon {
+  cursor: pointer;
+  color: #6e8098;
+}
+.theme-light .search-bar .input-group ::-moz-placeholder {
+  color: #6e8098;
+}
+.theme-light .search-bar .input-group ::placeholder {
+  color: #6e8098;
+}
+.theme-light .search-bar .input-group-text {
+  background-color: white;
+  height: 100%;
+  border: 0;
+}
+.theme-light .search-bar .input-group-text .form-check-input {
+  background-color: #6e8098;
+}
+.theme-light .search-bar .input-group-text .custom-button {
+  color: white;
+  background-color: #5964e0;
+}
+.theme-light .search-bar .input-group-text .custom-button:hover {
+  background-color: #939bf4;
+}
+.theme-light .search-bar .custom-button {
+  color: white;
+  background-color: #5964e0;
+}
+.theme-light .search-bar .custom-button:hover {
+  background-color: #939bf4;
+}
+.theme-light .job-card-wrapper {
+  cursor: pointer;
+  background-color: white;
+  position: relative;
+}
+.theme-light .job-card-wrapper .image {
+  position: absolute;
+  top: -25px;
+  left: 32px;
+}
+.theme-light .job-card-wrapper .muted-text {
+  color: #6e8098;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+}
+.theme-light .job-card-wrapper .text {
+  color: #121721;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 25px;
+}
+.theme-light .job-card-wrapper .location-text {
+  color: #5964e0;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 17px;
+}
+.theme-light .job-details .text {
+  color: #121721;
+}
+.theme-light .job-details .muted-text {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  color: #6e8098;
+}
+.theme-light .job-details .location-text {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 17px;
+  color: #5964e0;
+}
+.theme-light .job-details .job-title {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 35px;
+}
+.theme-light .job-details .heading-text {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 25px;
+  color: #121721;
+}
+.theme-light .job-details .apply-button {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20px;
+  text-align: center;
+  width: -moz-fit-content;
+  width: fit-content;
+  background-color: #5964e0;
+}
+.theme-light .job-details .body-text {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 26px;
+  color: #6e8098;
+}
+.theme-light .job-details .extra-padding {
+  padding-inline: 20px;
+}
+.theme-light .job-details .job-bar {
+  margin-top: -30px;
+  color: #121721;
+}
+.theme-light .job-details .job-bar .job-bar-row {
+  background-color: white;
+}
+.theme-light .job-details .job-bar .job-bar-row .floating-img {
+  position: absolute;
+  top: -20px;
+  left: calc(50% - 25px);
+  height: 50px;
+  width: 50px;
+}
+.theme-light .job-details .job-bar .job-bar-row .company-button.btn {
+  background-color: #6e8098;
+  color: white;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20px;
+  text-align: center;
+}
+.theme-light .job-details .job-main-section {
+  background-color: white;
+}
+.theme-light .job-details .job-main-section .title {
+  width: 300px;
+}
+.theme-light .job-details .job-footer {
+  background-color: white;
+}/*# sourceMappingURL=App.css.map */
